@@ -13591,9 +13591,9 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="R2" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R8" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
@@ -13645,20 +13645,20 @@ But it's useful to the host</text>
 <instance part="IC2" gate="P" x="132.08" y="71.12"/>
 <instance part="GND5" gate="1" x="111.76" y="81.28" rot="MR0"/>
 <instance part="C2" gate="G$1" x="165.1" y="66.04" rot="R180"/>
-<instance part="C4" gate="G$1" x="165.1" y="40.64"/>
+<instance part="C4" gate="G$1" x="165.1" y="43.18"/>
 <instance part="C6" gate="G$1" x="119.38" y="83.82" rot="R270"/>
 <instance part="C7" gate="G$1" x="119.38" y="50.8" rot="R270"/>
 <instance part="GND10" gate="1" x="144.78" y="58.42" rot="MR0"/>
 <instance part="R4" gate="G$1" x="86.36" y="119.38" rot="R90"/>
 <instance part="GUILLOTINE" gate="A" x="175.26" y="73.66"/>
-<instance part="DRIVE" gate="A" x="175.26" y="27.94"/>
+<instance part="DRIVE" gate="A" x="175.26" y="30.48"/>
 <instance part="GND2" gate="1" x="177.8" y="88.9"/>
 <instance part="12V" gate="G$1" x="17.78" y="111.76" rot="R180"/>
 <instance part="GND3" gate="1" x="27.94" y="104.14"/>
 <instance part="P+1" gate="1" x="27.94" y="116.84"/>
 <instance part="P+2" gate="1" x="147.32" y="86.36"/>
 <instance part="P+3" gate="1" x="147.32" y="52.705"/>
-<instance part="GND6" gate="1" x="170.18" y="12.7"/>
+<instance part="GND6" gate="1" x="170.18" y="15.24"/>
 <instance part="P+5" gate="1" x="86.36" y="129.54"/>
 <instance part="R1" gate="G$1" x="78.74" y="119.38" rot="R90"/>
 <instance part="GND7" gate="1" x="68.58" y="99.06"/>
@@ -13701,9 +13701,9 @@ But it's useful to the host</text>
 </segment>
 <segment>
 <pinref part="DRIVE" gate="A" pin="8"/>
-<wire x1="172.72" y1="20.32" x2="170.18" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="22.86" x2="170.18" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="170.18" y1="20.32" x2="170.18" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="22.86" x2="170.18" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
@@ -13773,25 +13773,12 @@ But it's useful to the host</text>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="165.1" y1="43.18" x2="172.72" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="DRIVE" gate="A" pin="1"/>
-<wire x1="172.72" y1="43.18" x2="172.72" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="43.18" x2="154.94" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="43.18" x2="154.94" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="P" pin="OUT1"/>
-<wire x1="154.94" y1="38.1" x2="144.78" y2="38.1" width="0.1524" layer="91"/>
-<junction x="165.1" y="43.18"/>
-</segment>
-</net>
-<net name="N$6" class="0">
-<segment>
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="DRIVE" gate="A" pin="2"/>
-<wire x1="165.1" y1="35.56" x2="172.72" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="P" pin="OUT2"/>
-<wire x1="165.1" y1="35.56" x2="144.78" y2="35.56" width="0.1524" layer="91"/>
-<junction x="165.1" y="35.56"/>
+<wire x1="165.1" y1="38.1" x2="172.72" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="38.1" x2="165.1" y2="38.1" width="0.1524" layer="91"/>
+<junction x="165.1" y="38.1"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -13917,9 +13904,9 @@ But it's useful to the host</text>
 <wire x1="12.7" y1="5.08" x2="12.7" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="30.48" x2="12.7" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="43.18" x2="22.86" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="5.08" x2="165.1" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="5.08" x2="165.1" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="DRIVE" gate="A" pin="7"/>
-<wire x1="165.1" y1="22.86" x2="172.72" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="25.4" x2="172.72" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
 <wire x1="2.54" y1="30.48" x2="12.7" y2="30.48" width="0.1524" layer="91"/>
 <junction x="12.7" y="30.48"/>
@@ -13929,18 +13916,18 @@ But it's useful to the host</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D6"/>
 <wire x1="83.82" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="P" pin="RIN"/>
-<wire x1="99.06" y1="50.8" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="35.56" x2="121.92" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="P" pin="FIN"/>
+<wire x1="121.92" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="38.1" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="D7"/>
 <wire x1="83.82" y1="53.34" x2="101.6" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="53.34" x2="101.6" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="P" pin="FIN"/>
-<wire x1="101.6" y1="38.1" x2="121.92" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="53.34" x2="101.6" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="P" pin="RIN"/>
+<wire x1="121.92" y1="35.56" x2="101.6" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -14019,9 +14006,9 @@ But it's useful to the host</text>
 <wire x1="111.76" y1="30.48" x2="119.38" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="30.48" x2="119.38" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="20.32" x2="154.94" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="20.32" x2="154.94" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="20.32" x2="154.94" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="DRIVE" gate="A" pin="3"/>
-<wire x1="154.94" y1="33.02" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="154.94" y1="35.56" x2="172.72" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -14039,9 +14026,9 @@ But it's useful to the host</text>
 <wire x1="106.68" y1="25.4" x2="116.84" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="25.4" x2="116.84" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="17.78" x2="157.48" y2="17.78" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="17.78" x2="157.48" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="17.78" x2="157.48" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="DRIVE" gate="A" pin="4"/>
-<wire x1="157.48" y1="30.48" x2="172.72" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="33.02" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -14059,9 +14046,9 @@ But it's useful to the host</text>
 <wire x1="111.76" y1="20.32" x2="114.3" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="20.32" x2="114.3" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="15.24" x2="160.02" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="160.02" y1="15.24" x2="160.02" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="15.24" x2="160.02" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="DRIVE" gate="A" pin="5"/>
-<wire x1="160.02" y1="27.94" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="30.48" x2="172.72" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -14079,9 +14066,9 @@ But it's useful to the host</text>
 <wire x1="106.68" y1="15.24" x2="111.76" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="15.24" x2="111.76" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="12.7" x2="162.56" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="12.7" x2="162.56" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="12.7" x2="162.56" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="DRIVE" gate="A" pin="6"/>
-<wire x1="162.56" y1="25.4" x2="172.72" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="27.94" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -14118,6 +14105,19 @@ But it's useful to the host</text>
 <pinref part="U$1" gate="G$1" pin="GND1"/>
 <pinref part="U$1" gate="G$1" pin="GND2"/>
 <wire x1="22.86" y1="53.34" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$30" class="0">
+<segment>
+<pinref part="DRIVE" gate="A" pin="1"/>
+<wire x1="172.72" y1="45.72" x2="172.72" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="45.72" x2="172.72" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="P" pin="OUT2"/>
+<wire x1="144.78" y1="35.56" x2="152.4" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="35.56" x2="152.4" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="45.72" x2="165.1" y2="45.72" width="0.1524" layer="91"/>
+<junction x="165.1" y="45.72"/>
 </segment>
 </net>
 </nets>

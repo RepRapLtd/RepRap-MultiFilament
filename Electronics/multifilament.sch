@@ -13598,7 +13598,6 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="R9" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="C1" library="rcl" deviceset="CPOL-EU" device="140CLH-1010" value="100u"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="I2C" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="//-LEL" library="pinhead" deviceset="PINHD-1X4" device=""/>
@@ -13607,6 +13606,7 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="0.1uF"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
+<part name="C1" library="rcl" deviceset="CPOL-EU" device="SANYO_9F" value="100u"/>
 </parts>
 <sheets>
 <sheet>
@@ -13638,6 +13638,7 @@ Licence: GPL</text>
 <text x="52.578" y="105.41" size="2.54" layer="95">scl</text>
 <text x="44.958" y="117.348" size="1.27" layer="95">N.B. Busy is not part of I2C
 But it's useful to the host</text>
+<text x="-33.02" y="127" size="1.778" layer="95">TODO: Make I2C jumper selectable 3V3/5V</text>
 </plain>
 <instances>
 <instance part="U$1" gate="G$1" x="55.88" y="66.04" smashed="yes" rot="R270"/>
@@ -13673,7 +13674,6 @@ But it's useful to the host</text>
 <instance part="R9" gate="G$1" x="106.68" y="20.32"/>
 <instance part="R10" gate="G$1" x="101.6" y="15.24"/>
 <instance part="GND8" gate="1" x="15.24" y="10.16"/>
-<instance part="C1" gate="G$1" x="33.02" y="111.76"/>
 <instance part="GND9" gate="1" x="111.76" y="48.26" rot="MR0"/>
 <instance part="I2C" gate="A" x="58.42" y="109.22" rot="R180"/>
 <instance part="//-LEL" gate="A" x="27.94" y="20.32"/>
@@ -13682,6 +13682,7 @@ But it's useful to the host</text>
 <instance part="C5" gate="G$1" x="-5.08" y="55.88"/>
 <instance part="GND1" gate="1" x="-5.08" y="45.72"/>
 <instance part="GND11" gate="1" x="17.78" y="48.26"/>
+<instance part="C1" gate="G$1" x="33.02" y="111.76"/>
 </instances>
 <busses>
 </busses>
@@ -13697,9 +13698,9 @@ But it's useful to the host</text>
 <wire x1="20.32" y1="109.22" x2="27.94" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="27.94" y1="109.22" x2="27.94" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="-"/>
 <wire x1="33.02" y1="106.68" x2="27.94" y2="106.68" width="0.1524" layer="91"/>
 <junction x="27.94" y="106.68"/>
+<pinref part="C1" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <pinref part="DRIVE" gate="A" pin="8"/>
@@ -13784,10 +13785,10 @@ But it's useful to the host</text>
 <pinref part="12V" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="111.76" x2="27.94" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="+12V"/>
-<pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="33.02" y1="114.3" x2="27.94" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="114.3" x2="27.94" y2="111.76" width="0.1524" layer="91"/>
 <junction x="27.94" y="114.3"/>
+<pinref part="C1" gate="G$1" pin="+"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="VCC@2"/>

@@ -1831,6 +1831,10 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="C3" pad="2"/>
 <contactref element="//-LEL" pad="4"/>
 <contactref element="C5" pad="2"/>
+<contactref element="U$1" pad="GND1"/>
+<contactref element="U$1" pad="GND2"/>
+<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0.6096" layer="1"/>
+<wire x1="45.7225" y1="7.62" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
 <contactref element="U$1" pad="VIN"/>
@@ -2122,11 +2126,6 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="61.9125" y1="42.545" x2="61.9125" y2="13.0175" width="1.27" layer="1"/>
 <wire x1="61.9125" y1="13.0175" x2="62.23" y2="12.7" width="1.27" layer="1"/>
 <wire x1="62.23" y1="12.7" x2="64.77" y2="12.7" width="1.27" layer="1"/>
-</signal>
-<signal name="N$29">
-<contactref element="U$1" pad="GND1"/>
-<contactref element="U$1" pad="GND2"/>
-<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$30">
 <contactref element="C4" pad="1"/>

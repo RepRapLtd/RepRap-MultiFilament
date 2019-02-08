@@ -13604,6 +13604,7 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="I2C" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="//-LEL" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="0.1uF"/>
+<part name="P+4" library="supply1" deviceset="+5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13676,6 +13677,7 @@ But it's useful to the host</text>
 <instance part="I2C" gate="A" x="58.42" y="109.22" rot="R180"/>
 <instance part="//-LEL" gate="A" x="27.94" y="20.32"/>
 <instance part="C3" gate="G$1" x="68.58" y="119.38"/>
+<instance part="P+4" gate="1" x="17.78" y="66.04"/>
 </instances>
 <busses>
 </busses>
@@ -13851,6 +13853,12 @@ But it's useful to the host</text>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="P+7" gate="1" pin="+5V"/>
 <wire x1="7.62" y1="40.64" x2="7.62" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="5V"/>
+<pinref part="P+4" gate="1" pin="+5V"/>
+<wire x1="22.86" y1="58.42" x2="17.78" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="58.42" x2="17.78" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -14088,9 +14096,9 @@ But it's useful to the host</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="D2"/>
 <wire x1="83.82" y1="40.64" x2="86.36" y2="40.64" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="40.64" x2="86.36" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="10.16" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="10.16" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="40.64" x2="86.36" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="12.7" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="//-LEL" gate="A" pin="3"/>
 <wire x1="17.78" y1="20.32" x2="25.4" y2="20.32" width="0.1524" layer="91"/>
 </segment>

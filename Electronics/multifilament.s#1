@@ -13598,7 +13598,6 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="R9" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="C1" library="rcl" deviceset="CPOL-EU" device="140CLH-1010" value="100u"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="I2C" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="//-LEL" library="pinhead" deviceset="PINHD-1X4" device=""/>
@@ -13606,6 +13605,8 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="0.1uF"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
+<part name="GND11" library="supply1" deviceset="GND" device=""/>
+<part name="C1" library="rcl" deviceset="CPOL-EU" device="SANYO_9F" value="100u"/>
 </parts>
 <sheets>
 <sheet>
@@ -13672,7 +13673,6 @@ But it's useful to the host</text>
 <instance part="R9" gate="G$1" x="106.68" y="20.32"/>
 <instance part="R10" gate="G$1" x="101.6" y="15.24"/>
 <instance part="GND8" gate="1" x="15.24" y="10.16"/>
-<instance part="C1" gate="G$1" x="33.02" y="111.76"/>
 <instance part="GND9" gate="1" x="111.76" y="48.26" rot="MR0"/>
 <instance part="I2C" gate="A" x="58.42" y="109.22" rot="R180"/>
 <instance part="//-LEL" gate="A" x="27.94" y="20.32"/>
@@ -13680,6 +13680,8 @@ But it's useful to the host</text>
 <instance part="P+4" gate="1" x="17.78" y="66.04"/>
 <instance part="C5" gate="G$1" x="-5.08" y="55.88"/>
 <instance part="GND1" gate="1" x="-5.08" y="45.72"/>
+<instance part="GND11" gate="1" x="17.78" y="48.26"/>
+<instance part="C1" gate="G$1" x="33.02" y="111.76"/>
 </instances>
 <busses>
 </busses>
@@ -13695,9 +13697,9 @@ But it's useful to the host</text>
 <wire x1="20.32" y1="109.22" x2="27.94" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="27.94" y1="109.22" x2="27.94" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="-"/>
 <wire x1="33.02" y1="106.68" x2="27.94" y2="106.68" width="0.1524" layer="91"/>
 <junction x="27.94" y="106.68"/>
+<pinref part="C1" gate="G$1" pin="-"/>
 </segment>
 <segment>
 <pinref part="DRIVE" gate="A" pin="8"/>
@@ -13747,6 +13749,15 @@ But it's useful to the host</text>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="-5.08" y1="50.8" x2="-5.08" y2="48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND1"/>
+<pinref part="U$1" gate="G$1" pin="GND2"/>
+<wire x1="22.86" y1="53.34" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="22.86" y1="53.34" x2="17.78" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="53.34" x2="17.78" y2="50.8" width="0.1524" layer="91"/>
+<junction x="22.86" y="53.34"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -13773,10 +13784,10 @@ But it's useful to the host</text>
 <pinref part="12V" gate="G$1" pin="2"/>
 <wire x1="20.32" y1="111.76" x2="27.94" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="+12V"/>
-<pinref part="C1" gate="G$1" pin="+"/>
 <wire x1="33.02" y1="114.3" x2="27.94" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="114.3" x2="27.94" y2="111.76" width="0.1524" layer="91"/>
 <junction x="27.94" y="114.3"/>
+<pinref part="C1" gate="G$1" pin="+"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="VCC@2"/>
@@ -14085,13 +14096,6 @@ But it's useful to the host</text>
 <wire x1="17.78" y1="12.7" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="//-LEL" gate="A" pin="3"/>
 <wire x1="17.78" y1="20.32" x2="25.4" y2="20.32" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$29" class="0">
-<segment>
-<pinref part="U$1" gate="G$1" pin="GND1"/>
-<pinref part="U$1" gate="G$1" pin="GND2"/>
-<wire x1="22.86" y1="53.34" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$30" class="0">

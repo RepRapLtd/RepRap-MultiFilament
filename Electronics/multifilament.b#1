@@ -1228,28 +1228,15 @@ MELF 0.10 W</description>
 <rectangle x1="0.3556" y1="-0.7239" x2="1.1057" y2="0.7262" layer="51"/>
 <rectangle x1="-0.1001" y1="-0.4001" x2="0.1001" y2="0.4001" layer="35"/>
 </package>
-<package name="140CLH-1010">
-<description>&lt;b&gt;Aluminum electrolytic capacitors SMD (Chip)&lt;/b&gt;&lt;p&gt;
-Long life base plate, High temperature 140 CLH&lt;p&gt;
-http://www.bccomponents.com/</description>
-<wire x1="-5.8" y1="5.15" x2="4.35" y2="5.15" width="0.2032" layer="21"/>
-<wire x1="5.8" y1="3.7" x2="5.8" y2="1.45" width="0.2032" layer="21"/>
-<wire x1="5.8" y1="1.45" x2="5.8" y2="-1.45" width="0.2032" layer="51"/>
-<wire x1="5.8" y1="-1.45" x2="5.8" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="4.35" y1="-5.15" x2="-5.8" y2="-5.15" width="0.2032" layer="21"/>
-<wire x1="-5.8" y1="-5.15" x2="-5.8" y2="-1.45" width="0.2032" layer="21"/>
-<wire x1="-5.8" y1="-1.45" x2="-5.8" y2="1.45" width="0.2032" layer="51"/>
-<wire x1="-5.8" y1="1.45" x2="-5.8" y2="5.15" width="0.2032" layer="21"/>
-<wire x1="5.8" y1="3.7" x2="4.35" y2="5.15" width="0.2032" layer="21"/>
-<wire x1="5.8" y1="-3.7" x2="4.35" y2="-5.15" width="0.2032" layer="21"/>
-<wire x1="-4.7" y1="-1.4" x2="4.7" y2="-1.4" width="0.2032" layer="21" curve="146.825323"/>
-<wire x1="4.7" y1="-1.4" x2="4.7" y2="1.4" width="0.2032" layer="51" curve="33.174677"/>
-<wire x1="-4.7" y1="1.4" x2="4.7" y2="1.4" width="0.2032" layer="21" curve="-146.825323"/>
-<wire x1="-4.7" y1="1.4" x2="-4.7" y2="-1.4" width="0.2032" layer="51" curve="33.174677"/>
-<smd name="+" x="4.15" y="0" dx="4.3" dy="2.5" layer="1"/>
-<smd name="-" x="-4.15" y="0" dx="4.3" dy="2.5" layer="1"/>
-<text x="-2.74" y="1.93" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.375" y="-2.885" size="1.27" layer="27">&gt;VALUE</text>
+<package name="SANYO-OSCON_9F">
+<description>&lt;b&gt;SANYO OSCON Capacitor&lt;/b&gt;&lt;p&gt;
+Source: e_os_all.pdf</description>
+<wire x1="-4.55" y1="0" x2="-3.6" y2="0" width="0.4064" layer="21"/>
+<circle x="0" y="0" radius="4.9" width="0.2032" layer="21"/>
+<pad name="-" x="-2.5" y="0" drill="0.8" diameter="1.27"/>
+<pad name="+" x="2.5" y="0" drill="0.8" diameter="1.27"/>
+<text x="-1.905" y="1.27" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -1799,11 +1786,11 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <element name="R8" library="rcl" package="M0805" value="180R" x="31.4325" y="46.6725" rot="R270"/>
 <element name="R9" library="rcl" package="M0805" value="180R" x="53.34" y="46.6725" rot="R270"/>
 <element name="R10" library="rcl" package="M0805" value="180R" x="55.88" y="46.6725" rot="R270"/>
-<element name="C1" library="rcl" package="140CLH-1010" value="100u" x="6.985" y="26.67" rot="R90"/>
 <element name="I2C" library="pinhead" package="1X04" value="" x="20.0025" y="46.0375"/>
 <element name="//-LEL" library="pinhead" package="1X04" value="" x="64.77" y="11.43" rot="R90"/>
 <element name="C3" library="rcl" package="C0805" value="0.1uF" x="46.6725" y="7.62" rot="R180"/>
 <element name="C5" library="rcl" package="C0805" value="0.1uF" x="15.24" y="41.5925" rot="R90"/>
+<element name="C1" library="rcl" package="SANYO-OSCON_9F" value="100u" x="-1.5875" y="-6.0325"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1822,7 +1809,6 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="12V" pad="1"/>
 <contactref element="DRIVE" pad="8"/>
 <contactref element="U$1" pad="GND"/>
-<contactref element="C1" pad="-"/>
 <contactref element="C7" pad="2"/>
 <contactref element="IC2" pad="8"/>
 <contactref element="C6" pad="2"/>
@@ -1833,7 +1819,6 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="C5" pad="2"/>
 <contactref element="U$1" pad="GND1"/>
 <contactref element="U$1" pad="GND2"/>
-<wire x1="6.985" y1="22.52" x2="11.4075" y2="22.52" width="0.254" layer="1"/>
 <wire x1="11.4075" y1="22.52" x2="11.43" y2="22.5425" width="0.254" layer="1"/>
 <via x="11.43" y="22.5425" extent="1-16" drill="0.6" diameter="2.54"/>
 <wire x1="11.43" y1="22.5425" x2="17.145" y2="22.5425" width="0.254" layer="16"/>
@@ -1860,17 +1845,26 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="35.8775" y1="14.9225" x2="35.8775" y2="27.305" width="0.254" layer="1"/>
 <wire x1="35.8775" y1="27.305" x2="34.925" y2="28.2575" width="0.254" layer="1"/>
 <wire x1="34.925" y1="28.2575" x2="34.925" y2="30.165" width="0.254" layer="1"/>
-<wire x1="59.3725" y1="20.0025" x2="64.77" y2="15.24" width="0" layer="19" extent="1-1"/>
-<wire x1="45.7225" y1="7.62" x2="59.3725" y2="20.0025" width="0" layer="19" extent="1-1"/>
-<wire x1="43.18" y1="2.54" x2="45.7225" y2="7.62" width="0" layer="19" extent="1-1"/>
-<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
-<wire x1="35.8775" y1="14.9225" x2="45.7225" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="64.77" y1="15.24" x2="64.77" y2="24.4475" width="0.254" layer="1"/>
+<wire x1="64.77" y1="24.4475" x2="65.405" y2="25.0825" width="0.254" layer="1"/>
+<via x="65.405" y="25.0825" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="65.405" y1="25.0825" x2="58.7375" y2="25.0825" width="0.254" layer="16"/>
+<via x="58.7375" y="25.0825" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="58.7375" y1="25.0825" x2="58.7375" y2="22.86" width="0.254" layer="1"/>
+<wire x1="58.7375" y1="22.86" x2="59.3725" y2="22.225" width="0.254" layer="1"/>
+<wire x1="59.3725" y1="22.225" x2="59.3725" y2="20.0025" width="0.254" layer="1"/>
+<contactref element="C1" pad="-"/>
+<wire x1="16.1925" y1="46.0375" x2="26.416" y2="50.8" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="42.5425" x2="16.1925" y2="46.0375" width="0" layer="19" extent="1-1"/>
+<wire x1="6.985" y1="39.0525" x2="15.24" y2="42.5425" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="22.5425" x2="6.985" y2="39.0525" width="0" layer="19" extent="1-1"/>
 <wire x1="38.4175" y1="30.165" x2="34.925" y2="30.165" width="0" layer="19" extent="1-1"/>
 <wire x1="40.8975" y1="29.5275" x2="38.4175" y2="30.165" width="0" layer="19" extent="1-1"/>
-<wire x1="6.985" y1="39.0525" x2="6.985" y2="22.52" width="0" layer="19" extent="1-1"/>
-<wire x1="15.24" y1="42.5425" x2="6.985" y2="39.0525" width="0" layer="19" extent="1-1"/>
-<wire x1="16.1925" y1="46.0375" x2="15.24" y2="42.5425" width="0" layer="19" extent="1-1"/>
-<wire x1="26.416" y1="50.8" x2="16.1925" y2="46.0375" width="0" layer="19" extent="1-1"/>
+<wire x1="45.7225" y1="7.62" x2="35.8775" y2="14.9225" width="0" layer="19" extent="1-1"/>
+<wire x1="43.18" y1="2.54" x2="45.7225" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="58.7375" y1="25.0825" x2="40.8975" y2="29.5275" width="0" layer="19" extent="1-16"/>
+<wire x1="-4.0875" y1="-6.0325" x2="19.05" y2="16.1925" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="VIN">
 <contactref element="U$1" pad="VIN"/>
@@ -1908,7 +1902,6 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="IC1" pad="2"/>
 <contactref element="IC1" pad="6"/>
 <contactref element="C7" pad="1"/>
-<contactref element="C1" pad="+"/>
 <contactref element="IC2" pad="6"/>
 <contactref element="C6" pad="1"/>
 <contactref element="IC2" pad="3"/>
@@ -1922,14 +1915,15 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <wire x1="34.925" y1="32.065" x2="38.4175" y2="32.065" width="0.6096" layer="1"/>
 <wire x1="38.4175" y1="32.065" x2="40.895" y2="32.065" width="0.6096" layer="1"/>
 <wire x1="40.895" y1="32.065" x2="40.8975" y2="32.0675" width="0.6096" layer="1"/>
-<wire x1="6.985" y1="36.5125" x2="6.985" y2="30.82" width="1.27" layer="1"/>
-<wire x1="6.985" y1="30.82" x2="10.1825" y2="30.82" width="1.27" layer="1"/>
 <wire x1="10.1825" y1="30.82" x2="11.43" y2="32.0675" width="1.27" layer="1"/>
 <via x="11.43" y="32.0675" extent="1-16" drill="0.6" diameter="2.54"/>
 <wire x1="11.43" y1="32.0675" x2="23.8125" y2="32.0675" width="1.27" layer="16"/>
 <via x="23.8125" y="32.0675" extent="1-16" drill="0.6" diameter="2.54"/>
 <wire x1="23.8125" y1="32.0675" x2="24.4475" y2="32.0675" width="1.27" layer="1"/>
 <wire x1="24.4475" y1="32.0675" x2="26.61" y2="32.0675" width="0.6096" layer="1"/>
+<contactref element="C1" pad="+"/>
+<wire x1="11.43" y1="32.0675" x2="6.985" y2="36.5125" width="0" layer="19" extent="1-1"/>
+<wire x1="0.9125" y1="-6.0325" x2="10.1825" y2="30.82" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
 <contactref element="R4" pad="2"/>

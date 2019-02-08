@@ -1591,26 +1591,26 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="pcbtrain">
+<designrules name="pcbtrain *">
 <description language="en">&lt;b&gt;PCB TRAIN &lt;i&gt;metric&lt;/i&gt; Design Rules&lt;/b&gt;
 &lt;p&gt;
 These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt;metric&lt;/i&gt; so there might be problems with high density chips etc.&lt;p&gt;</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="0.2mm"/>
-<param name="mdWirePad" value="0.2mm"/>
-<param name="mdWireVia" value="0.2mm"/>
-<param name="mdPadPad" value="0.2mm"/>
-<param name="mdPadVia" value="0.2mm"/>
-<param name="mdViaVia" value="0.2mm"/>
+<param name="mdWireWire" value="0.31mm"/>
+<param name="mdWirePad" value="0.31mm"/>
+<param name="mdWireVia" value="0.31mm"/>
+<param name="mdPadPad" value="0.31mm"/>
+<param name="mdPadVia" value="0.31mm"/>
+<param name="mdViaVia" value="0.31mm"/>
 <param name="mdSmdPad" value="0mil"/>
 <param name="mdSmdVia" value="0mil"/>
 <param name="mdSmdSmd" value="0mil"/>
 <param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
 <param name="mdCopperDimension" value="10mil"/>
-<param name="mdDrill" value="0.2mm"/>
+<param name="mdDrill" value="0.31mm"/>
 <param name="mdSmdStop" value="0mil"/>
 <param name="msWidth" value="0.2mm"/>
 <param name="msDrill" value="0.4mm"/>
@@ -1833,8 +1833,44 @@ These strictly adhere to the PCB Train board house specs. The rules are &lt;i&gt
 <contactref element="C5" pad="2"/>
 <contactref element="U$1" pad="GND1"/>
 <contactref element="U$1" pad="GND2"/>
-<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0.6096" layer="1"/>
-<wire x1="45.7225" y1="7.62" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="6.985" y1="22.52" x2="11.4075" y2="22.52" width="0.254" layer="1"/>
+<wire x1="11.4075" y1="22.52" x2="11.43" y2="22.5425" width="0.254" layer="1"/>
+<via x="11.43" y="22.5425" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="11.43" y1="22.5425" x2="17.145" y2="22.5425" width="0.254" layer="16"/>
+<wire x1="17.145" y1="22.5425" x2="19.05" y2="23.1775" width="0.254" layer="16"/>
+<via x="19.05" y="23.1775" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="19.05" y1="23.1775" x2="20.0025" y2="23.1775" width="0.254" layer="1"/>
+<wire x1="20.0025" y1="23.1775" x2="20.32" y2="22.86" width="0.254" layer="1"/>
+<wire x1="20.32" y1="22.86" x2="20.32" y2="20.0025" width="0.254" layer="1"/>
+<wire x1="20.32" y1="20.0025" x2="20.0025" y2="19.685" width="0.254" layer="1"/>
+<wire x1="19.05" y1="23.1775" x2="19.05" y2="25.4" width="0.254" layer="1" curve="71.370669"/>
+<via x="19.05" y="25.4" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="19.05" y1="25.4" x2="24.765" y2="25.4" width="0.254" layer="16"/>
+<wire x1="24.765" y1="25.4" x2="26.67" y2="27.305" width="0.254" layer="16"/>
+<via x="26.67" y="27.305" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="26.67" y1="27.305" x2="26.67" y2="29.4675" width="0.254" layer="1"/>
+<wire x1="26.67" y1="29.4675" x2="26.61" y2="29.5275" width="0.254" layer="1"/>
+<wire x1="20.0025" y1="19.685" x2="19.05" y2="16.1925" width="0.254" layer="1" curve="54.888924"/>
+<via x="19.05" y="16.1925" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="19.05" y1="16.1925" x2="26.035" y2="16.1925" width="0.254" layer="16"/>
+<wire x1="26.035" y1="16.1925" x2="29.21" y2="13.0175" width="0.254" layer="16"/>
+<via x="29.21" y="13.0175" extent="1-16" drill="0.6" diameter="2.54"/>
+<wire x1="29.21" y1="13.0175" x2="33.9725" y2="13.0175" width="0.254" layer="1"/>
+<wire x1="33.9725" y1="13.0175" x2="35.8775" y2="14.9225" width="0.254" layer="1"/>
+<wire x1="35.8775" y1="14.9225" x2="35.8775" y2="27.305" width="0.254" layer="1"/>
+<wire x1="35.8775" y1="27.305" x2="34.925" y2="28.2575" width="0.254" layer="1"/>
+<wire x1="34.925" y1="28.2575" x2="34.925" y2="30.165" width="0.254" layer="1"/>
+<wire x1="59.3725" y1="20.0025" x2="64.77" y2="15.24" width="0" layer="19" extent="1-1"/>
+<wire x1="45.7225" y1="7.62" x2="59.3725" y2="20.0025" width="0" layer="19" extent="1-1"/>
+<wire x1="43.18" y1="2.54" x2="45.7225" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="40.64" y1="2.54" x2="43.18" y2="2.54" width="0" layer="19" extent="1-1"/>
+<wire x1="35.8775" y1="14.9225" x2="45.7225" y2="7.62" width="0" layer="19" extent="1-1"/>
+<wire x1="38.4175" y1="30.165" x2="34.925" y2="30.165" width="0" layer="19" extent="1-1"/>
+<wire x1="40.8975" y1="29.5275" x2="38.4175" y2="30.165" width="0" layer="19" extent="1-1"/>
+<wire x1="6.985" y1="39.0525" x2="6.985" y2="22.52" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="42.5425" x2="6.985" y2="39.0525" width="0" layer="19" extent="1-1"/>
+<wire x1="16.1925" y1="46.0375" x2="15.24" y2="42.5425" width="0" layer="19" extent="1-1"/>
+<wire x1="26.416" y1="50.8" x2="16.1925" y2="46.0375" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
 <contactref element="U$1" pad="VIN"/>

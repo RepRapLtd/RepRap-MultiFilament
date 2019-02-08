@@ -13591,10 +13591,9 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="R2" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
-<part name="P+7" library="supply1" deviceset="+5V" device=""/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R8" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
@@ -13605,6 +13604,8 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="//-LEL" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="0.1uF"/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="0.1uF"/>
+<part name="GND1" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13663,8 +13664,7 @@ But it's useful to the host</text>
 <instance part="GND7" gate="1" x="68.58" y="99.06"/>
 <instance part="R2" gate="G$1" x="7.62" y="55.88" rot="R90"/>
 <instance part="P+6" gate="1" x="7.62" y="66.04"/>
-<instance part="R3" gate="G$1" x="7.62" y="35.56" rot="R90"/>
-<instance part="P+7" gate="1" x="7.62" y="45.72"/>
+<instance part="R3" gate="G$1" x="2.54" y="35.56" rot="R90"/>
 <instance part="R5" gate="G$1" x="106.68" y="30.48"/>
 <instance part="R6" gate="G$1" x="101.6" y="25.4"/>
 <instance part="R7" gate="G$1" x="91.44" y="66.04"/>
@@ -13678,6 +13678,8 @@ But it's useful to the host</text>
 <instance part="//-LEL" gate="A" x="27.94" y="20.32"/>
 <instance part="C3" gate="G$1" x="68.58" y="119.38"/>
 <instance part="P+4" gate="1" x="17.78" y="66.04"/>
+<instance part="C5" gate="G$1" x="-5.08" y="55.88"/>
+<instance part="GND1" gate="1" x="-5.08" y="45.72"/>
 </instances>
 <busses>
 </busses>
@@ -13739,6 +13741,11 @@ But it's useful to the host</text>
 <wire x1="170.18" y1="81.28" x2="170.18" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="170.18" y1="91.44" x2="177.8" y2="91.44" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="-5.08" y1="50.8" x2="-5.08" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -13848,11 +13855,14 @@ But it's useful to the host</text>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="P+6" gate="1" pin="+5V"/>
 <wire x1="7.62" y1="60.96" x2="7.62" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-<segment>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="7.62" y1="60.96" x2="2.54" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="60.96" x2="-5.08" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="60.96" x2="-5.08" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="60.96" x2="2.54" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="P+7" gate="1" pin="+5V"/>
-<wire x1="7.62" y1="40.64" x2="7.62" y2="43.18" width="0.1524" layer="91"/>
+<junction x="2.54" y="60.96"/>
+<junction x="7.62" y="60.96"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="5V"/>
@@ -13911,7 +13921,7 @@ But it's useful to the host</text>
 <pinref part="DRIVE" gate="A" pin="7"/>
 <wire x1="165.1" y1="22.86" x2="172.72" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="7.62" y1="30.48" x2="12.7" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="2.54" y1="30.48" x2="12.7" y2="30.48" width="0.1524" layer="91"/>
 <junction x="12.7" y="30.48"/>
 </segment>
 </net>
