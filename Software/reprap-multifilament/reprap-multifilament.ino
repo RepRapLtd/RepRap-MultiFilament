@@ -43,14 +43,18 @@ const long maxMoveTime = 16000;
 
 /*
  * The expected difference between light and dark reduces as ambient light
- * increases.  This is an approximation to that behaviour:
+ * increases.  This is a quadratic approximation to that behaviour:
  * 
  *    Difference = -0.0002948xdark_level^2 + 0.4343xdark_level + 0.05407
  */
 
- const float a0 = 0.05407;
- const float a1 = 0.4343;
- const float a2 = -0.0002948;
+const float a0 = 0.05407;
+const float a1 = 0.4343;
+const float a2 = -0.0002948;
+
+// The acceptable error band
+
+const int diffError = 25;
 
 // Status pin
 
@@ -144,10 +148,10 @@ int differentialPhoto(int device, int ledNumber)
 }
 
 /*
- * Are we ar a given position?
- * The criterion is LED on/off difference is 80% of the expected value.
+ * Are we at a given position?
+ * The criterion is LED on/off difference is diffError greater than the expected value.
  */
-bool atLEDPosition(int device, int ledNumber)
+bool AtLEDPosition(int device, int ledNumber)
 {
   unsigned char pt;
   unsigned char led;
@@ -157,13 +161,21 @@ bool atLEDPosition(int device, int ledNumber)
   digitalWrite(led, 1);
   int diff = dark - analogRead(pt);
   digitalWrite(led, 0);
-  //float expectedDiff = darkGradient*(float)dark + darkIntercept;
-  float expectedDiff = (float)dark*(float)dark;
-  expectedDiff = a2*expectedDiff + a1*(float)dark + a0;
-  Serial.println(expectedDiff);
-  return diff > (int)(0.5 + 0.8*expectedDiff);  
+  if((dark < 400) && debug)
+  {
+    Serial.print("Background light level (");
+    Serial.print(dark);
+    Serial.println(") is too bright.");
+  }
+  float expectedDiff = (float)dark;
+  expectedDiff = a2*expectedDiff*expectedDiff + a1*expectedDiff + a0;
+  return diff > ((int)(0.5 + expectedDiff) - diffError);  
 }
 
+/*
+ * Report the status of a LED-phototransistor pair.
+ * Mainly for debugging
+ */
 void ReportDarkAndLight(int device, int ledNumber)
 {
   unsigned char pt;
@@ -199,13 +211,8 @@ int FindPosition(int device)
     leds = guillotineLEDs;
   }
 
-  if (debug)
-  {
-    Serial.print("Finding position. diff V: ");
-  }
-
   int led = 0;
-  while(led < leds && !atLEDPosition(device, led))
+  while(led < leds && !AtLEDPosition(device, led))
   {
     led++;
   }
@@ -279,8 +286,8 @@ int SeekPosition(int device, int led)
     if (debug)
     {
       Serial.println("Seeking a position from an unknown position!");
-      return;
     }
+    return;
   }
 
   if (pos == led)
@@ -302,18 +309,18 @@ int SeekPosition(int device, int led)
 
   while ((((long)millis() - t) < maxMoveTime) && notThere)
   {
-    if(atLEDPosition(device, led))
+    if(AtLEDPosition(device, led))
     {
-      Brake(device);
       notThere = false;
     }
     delay(10);
   }
+  delay(1500);
   Brake(device);
   
   if (debug)
   {
-    if( notThere)
+    if(notThere)
     {
       Serial.println("Time out on movement.");
     }
@@ -400,7 +407,7 @@ void loop()
         SeekPosition(device, 1);
         SeekPosition(device, 0);
         Reverse(device);
-        delay(3000);
+        delay(1500);
         Brake(device);
         break;
 
