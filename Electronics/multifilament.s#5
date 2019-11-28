@@ -13591,9 +13591,9 @@ Source: http://www.rohm.com/products/databook/motor/pdf/bd623x_series-e.pdf</des
 <part name="R2" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="M0805" value="20K"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="M0805" value="560R"/>
 <part name="R8" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="M0805" value="180R"/>
