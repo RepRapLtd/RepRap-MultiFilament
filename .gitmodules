@@ -1,0 +1,3 @@
+[submodule "Prusa/Original-Prusa-i3"]
+	path = Prusa/Original-Prusa-i3
+	url = https://github.com/RepRapLtd/Original-Prusa-i3
